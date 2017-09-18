@@ -1,5 +1,5 @@
 {
-    "name": "yemma-client",
+    "name": "yemma-discovery",
     "version": "1.1.0",
     "engines": {
         "node": "8.4.0"
@@ -13,8 +13,8 @@
         "lint": "eslint ."
     },
     "author": "Julien Sarazin <sarazin.julien@digipolitan.com>",
-    "repository": "https://gitlab.com/digipolitan/yemma.git",
-    "license": "ISC",
+    "repository": "git@github.com:Digipolitan/yemma-discovery.git",
+    "license": "MIT",
     "eslintConfig": {
         "extends": "airbnb",
         "rules": {
