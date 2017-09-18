@@ -5,7 +5,8 @@
 
 
 
-`Yemma-Discovery` is a thin layer to help you manage your nodes in a micro-services architectures.
+`Yemma-Discovery` is a thin layer to help you manage your nodes in a micro-services architectures maintained in a **Registry** by [Yemma](https://github.com/Digipolitan/yemma)
+
 Either your application represent a micro-service, either your application is a Gateway and wants to access a node with some specifications.
 
 1. Install `Yemma-Discovery`
@@ -49,7 +50,7 @@ new DiscoveryService({ heartBeats: false }); // disable the heartbeat
 ```
 
 
-2. Use `Yemma-Discovery` to proxy request to registered instances.
+3. Proxy request to registered instances.
 
 If you develop a Gateway, it can be helpful to have a direct access to the registered nodes.
 
