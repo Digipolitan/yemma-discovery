@@ -1,24 +1,25 @@
-# Yemma-Client
+# `Yemma-Discovery`
 
 [![Build Status](https://travis-ci.org/Digipolitan/yemma-discovery.svg?branch=master)](https://travis-ci.org/Digipolitan/yemma-discovery)
 [![Test Coverage](https://codeclimate.com/github/Digipolitan/yemma-discovery/badges/coverage.svg)](https://codeclimate.com/github/Digipolitan/yemma-discovery/coverage)
 
 
 
-Yemma-Client is a thin to help you manage your nodes in a micro-services architectures.
-Either you are a micro-service you can use Yemma-Client to register yourself as an available node, either you are a Gateway and you want access a node with some specifications.
+`Yemma-Discovery` is a thin layer to help you manage your nodes in a micro-services architectures.
+Either your application represent a micro-service, in this case you can use `Yemma-Discovery` to register your application as an available node, 
+either your application is a Gateway and you want access a node with some specifications, you can also use `Yemma-Discovery`
 
-1. Install Yemma-Client
+1. Install `Yemma-Discovery`
 
 ```bash
-npm i --save yemma-client
+npm i --save yemma-discovery
 ```
 
 2. To register yourself as a service
 
-Yemma-Client automatically register itself as a service as soon as it is instanciated.
+`Yemma-Discovery` automatically register itself as a service as soon as it is instanciated.
 
-Before registering yourself, Yemma-Client will look into some environment variables:
+Before registering yourself, `Yemma-Discovery` will look into some environment variables:
 
 ```bash
 # Related to the registry
@@ -34,7 +35,7 @@ HOST=customHost.org                  #[optional] if the node is behind a proxy, 
 
 
 ```javascript
-const DisoveryService = require('yemma-client');
+const DisoveryService = require('yemma-discovery');
 new DiscoveryService(); // will automatically register the node to the registry
 ```
 
@@ -42,14 +43,43 @@ That's it, you are not discoverable in the registry.
 
 You can disable this behavior by passing an option in the constructor.
 Meaning you don't have to set information related to the node itself.
+
 ```javascript
-const DisoveryService = require('yemma-client');
+const DisoveryService = require('yemma-discovery');
 new DiscoveryService({ heartBeats: false }); // disable the heartbeat
 ```
 
 
-2. Use Yemma-Client to proxy request to registered instance.
+2. Use `Yemma-Discovery` to proxy request to registered instances.
 
 If you develop a Gateway, it can be helpful to have a direct access to the registered nodes.
+
+
+```javascript
+const DisoveryService = require('yemma-discovery');
+const registry = new DiscoveryService({ heartBeats: false }); // disable the heartbeat
+
+const express = require('express');
+const server = express();
+
+express.use(proxy);
+
+function proxy(req, res, next) {
+    const components = req.originalUrl.split('/')
+    const realm = components[1];
+
+    registry
+        .next({realm: realm})
+        .then(instance => instance.request('/api/users'))
+        .then(response => {
+            res.headers = response.headers;
+            res.status(response.status(response.statusCode).send(response.data);
+        })
+        .catch(response => {
+            res.status(response.statusCode).send(response.data);
+        });
+}
+```
+
 
 
