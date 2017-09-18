@@ -6,8 +6,7 @@
 
 
 `Yemma-Discovery` is a thin layer to help you manage your nodes in a micro-services architectures.
-Either your application represent a micro-service, in this case you can use `Yemma-Discovery` to register your application as an available node, 
-either your application is a Gateway and you want access a node with some specifications, you can also use `Yemma-Discovery`
+Either your application represent a micro-service, either your application is a Gateway and wants to access a node with some specifications.
 
 1. Install `Yemma-Discovery`
 
