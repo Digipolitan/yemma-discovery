@@ -38,7 +38,7 @@ const DisoveryService = require('yemma-discovery');
 new DiscoveryService(); // will automatically register the node to the registry
 ```
 
-That's it, you are not discoverable in the registry.
+**That's it**, you are now **discoverable** from the registry.
 
 You can disable this behavior by passing an option in the constructor.
 Meaning you don't have to set information related to the node itself.
