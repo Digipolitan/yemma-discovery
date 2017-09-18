@@ -1,4 +1,4 @@
-# `Yemma-Discovery`
+# Yemma-Discovery
 
 [![Build Status](https://travis-ci.org/Digipolitan/yemma-discovery.svg?branch=master)](https://travis-ci.org/Digipolitan/yemma-discovery)
 [![Test Coverage](https://codeclimate.com/github/Digipolitan/yemma-discovery/badges/coverage.svg)](https://codeclimate.com/github/Digipolitan/yemma-discovery/coverage)
