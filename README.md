@@ -62,7 +62,7 @@ const registry = new DiscoveryService({ heartBeats: false }); // disable the hea
 const express = require('express');
 const server = express();
 
-express.use(proxy);
+server.use(proxy);
 
 function proxy(req, res, next) {
     const components = req.originalUrl.split('/')
