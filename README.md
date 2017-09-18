@@ -1,5 +1,9 @@
 # Yemma-Client
 
+https://travis-ci.org/Digipolitan/yemma-discovery.svg?branch=master
+[![Test Coverage](https://codeclimate.com/github/Digipolitan/yemma-discovery/badges/coverage.svg)](https://codeclimate.com/github/Digipolitan/yemma-discovery/coverage)
+
+
 
 Yemma-Client is a thin to help you manage your nodes in a micro-services architectures.
 Either you are a micro-service you can use Yemma-Client to register yourself as an available node, either you are a Gateway and you want access a node with some specifications.
