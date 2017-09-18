@@ -79,6 +79,9 @@ function proxy(req, res, next) {
             res.status(response.statusCode).send(response.data);
         });
 }
+
+server.listen(3000);
+console.log('Gateway listening on port 3000');
 ```
 
 
