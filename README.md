@@ -1,13 +1,13 @@
-# `Yemma-Discovery`
+# Yemma-Discovery
 
 [![Build Status](https://travis-ci.org/Digipolitan/yemma-discovery.svg?branch=master)](https://travis-ci.org/Digipolitan/yemma-discovery)
 [![Test Coverage](https://codeclimate.com/github/Digipolitan/yemma-discovery/badges/coverage.svg)](https://codeclimate.com/github/Digipolitan/yemma-discovery/coverage)
 
 
 
-`Yemma-Discovery` is a thin layer to help you manage your nodes in a micro-services architectures.
-Either your application represent a micro-service, in this case you can use `Yemma-Discovery` to register your application as an available node, 
-either your application is a Gateway and you want access a node with some specifications, you can also use `Yemma-Discovery`
+`Yemma-Discovery` is a thin layer to help you manage your nodes in a micro-services architectures maintained in a **Registry** by [Yemma](https://github.com/Digipolitan/yemma)
+
+Either your application represent a micro-service, either your application is a Gateway and wants to access a node with some specifications.
 
 1. Install `Yemma-Discovery`
 
@@ -39,7 +39,7 @@ const DisoveryService = require('yemma-discovery');
 new DiscoveryService(); // will automatically register the node to the registry
 ```
 
-That's it, you are not discoverable in the registry.
+**That's it**, you are now **discoverable** from the registry.
 
 You can disable this behavior by passing an option in the constructor.
 Meaning you don't have to set information related to the node itself.
@@ -50,7 +50,7 @@ new DiscoveryService({ heartBeats: false }); // disable the heartbeat
 ```
 
 
-2. Use `Yemma-Discovery` to proxy request to registered instances.
+3. Proxy request to registered instances.
 
 If you develop a Gateway, it can be helpful to have a direct access to the registered nodes.
 
@@ -62,7 +62,7 @@ const registry = new DiscoveryService({ heartBeats: false }); // disable the hea
 const express = require('express');
 const server = express();
 
-express.use(proxy);
+server.use(proxy);
 
 function proxy(req, res, next) {
     const components = req.originalUrl.split('/')
@@ -79,6 +79,9 @@ function proxy(req, res, next) {
             res.status(response.statusCode).send(response.data);
         });
 }
+
+server.listen(3000);
+console.log('Gateway listening on port 3000');
 ```
 
 
