@@ -50,6 +50,29 @@ new DiscoveryService({ heartBeats: false }); // disable the heartbeat
 ```
 
 
+2.1 Ensuring the request issuer is valid
+In a typical `express` server type you can use Yemma-Discovery to validate request issuers are allowed to access your API.
+
+
+```javascript
+
+cons express = require('express');
+const DisoveryService = require('yemma-discovery');
+
+const server = express();
+const ds = new DiscoveryService(); // will automatically register the node to the registry
+
+server.use((req, res, next) => {
+    const access_token = req.header('access-token');
+    ds.validateIssuer(access_token);
+        .then(() => next())
+        .catch(() => res.status(403).send('invalid.issuer'));
+});
+
+server.get('/', (req, res) => res.send('hello, world'));
+server.listen(3000);
+```
+
 3. Proxy request to registered instances.
 
 If you develop a Gateway, it can be helpful to have a direct access to the registered nodes.
