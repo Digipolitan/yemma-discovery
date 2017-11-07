@@ -3,9 +3,9 @@
         "method": "POST",
         "json": true,
         "body": {
+            "timeout": "?TIMEOUT",
             "realm": "$REALM",
             "port": "$PORT",
-            "address": "?HOST",
             "access_token": "$ACCESS_TOKEN"
         }
     }
