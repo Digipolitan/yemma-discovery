@@ -62,7 +62,8 @@
         "mongoose-timestamps": "0.0.1",
         "morgan": "^1.8.2",
         "request": "^2.81.0",
-        "request-promise": "latest"
+        "request-promise": "latest",
+        "socket.io-client": "^2.0.4"
     },
     "devDependencies": {
         "chai": "^4.0.2",
