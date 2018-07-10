@@ -1,5 +1,4 @@
 {
     "uri": "$YEMMA_URI",
-    "access_token": "$YEMMA_TOKEN",
-    "registration_channel": "$YEMMA_REGISTRATION_CHANNEL?"
+    "access_token": "$YEMMA_TOKEN"
 }

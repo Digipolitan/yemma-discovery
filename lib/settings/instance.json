@@ -1,12 +1,8 @@
 {
-    "info": {
-        "method": "POST",
-        "json": true,
-        "body": {
-            "timeout": "$TIMEOUT?",
-            "realm": "$REALM",
-            "port": "$PORT",
-            "access_token": "$ACCESS_TOKEN"
-        }
-    }
+  "data": {
+    "timeout": "$TIMEOUT?",
+    "realm": "$REALM",
+    "port": "$PORT",
+    "access_token": "$ACCESS_TOKEN"
+  }
 }
