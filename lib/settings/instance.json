@@ -2,6 +2,8 @@
   "data": {
     "timeout": "$TIMEOUT?",
     "realm": "$REALM",
-    "port": "$PORT"
+    "port": "$PORT",
+    "proxy_port": "$PROXY_PORT?",
+    "address": "$PROXY_HOST?"
   }
 }
