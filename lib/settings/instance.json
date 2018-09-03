@@ -4,6 +4,7 @@
     "realm": "$REALM",
     "port": "$PORT",
     "proxy_port": "$PROXY_PORT?",
-    "address": "$PROXY_HOST?"
+    "address": "$PROXY_HOST?",
+    "secure": "$SECURE?"
   }
 }
