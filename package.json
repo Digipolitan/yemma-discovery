@@ -1,6 +1,6 @@
 {
     "name": "yemma-discovery",
-    "version": "2.2.3",
+    "version": "2.3.0",
     "engines": {
         "node": "8.4.0"
     },
